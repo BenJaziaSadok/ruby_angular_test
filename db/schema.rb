@@ -11,7 +11,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151116154936) do
+ActiveRecord::Schema.define(version: 20160515113639) do
+
+  create_table "ingredients", force: :cascade do |t|
+    t.string   "ingredient_name"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
+
+  add_index "ingredients", ["ingredient_name"], name: "index_ingredients_on_ingredient_name", unique: true
+
+  create_table "recipes", force: :cascade do |t|
+    t.string   "recipe_name"
+    t.string   "recipe_picture"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.string   "user"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
