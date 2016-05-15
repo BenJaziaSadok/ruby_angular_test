@@ -6,7 +6,7 @@ Installation
 Before starting,  check if you have ruby, rails, git and bower installed on your machine
   * Clone this repo
   * run `bundle install`
-  * run `rake db:setup `
+  * run `bundle exec rake db:setup `
 
   install dependencies (angular, bootstrap, ...)
   * `bower install`
